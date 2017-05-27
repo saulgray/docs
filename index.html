@@ -1,94 +1,90 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.19" />
+	<meta name="generator" content="Hugo 0.21" />
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>DocuAPI Example Site</title>
-    <link href='slate/stylesheets/monokai.css' rel="stylesheet" media="screen" />
-<link href='slate/stylesheets/screen.css' rel="stylesheet" media="screen" />
-<link href='slate/stylesheets/print.css' rel="stylesheet" media="print" />
+    <link href='/slate/stylesheets/monokai.css' rel="stylesheet" media="screen" />
+<link href='/slate/stylesheets/screen.css' rel="stylesheet" media="screen" />
+<link href='/slate/stylesheets/print.css' rel="stylesheet" media="print" />
 
+    
+<script src='/slate/javascripts/all.js'></script>
 
-<script src='slate/javascripts/all.js'></script>
-
-
+    
 </head>
-<body class="index" data-languages="[ &#34;go&#34; ,  &#34;shell&#34; ,  &#34;ruby&#34; ,  &#34;python&#34; ,  &#34;javascript&#34; ]">
+<body class="index" data-languages="[ &#34;curl&#34; ,  &#34;python&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
-        <img src='slate/images/navbar.png'/>
+        <img src='/slate/images/navbar.png'/>
       </span>
     </a>
     <div class="tocify-wrapper">
-        <img src='images/logo.png' />
-
+        <img src='/images/logo.png' />
+        
         <div class="lang-selector">
-
-            <a href="#" data-language-name="go">Go</a>
-
-            <a href="#" data-language-name="shell">Shell</a>
-
-            <a href="#" data-language-name="ruby">Ruby</a>
-
+            
+            <a href="#" data-language-name="curl">Curl</a>
+            
             <a href="#" data-language-name="python">Python</a>
-
-            <a href="#" data-language-name="javascript">Javascript</a>
-
+            
         </div>
-
-
+         
+        
         <div class="search">
             <input type="text" class="search" id="input-search" placeholder='Search'>
         </div>
         <ul class="search-results"></ul>
-
+        
         <div id="toc">
         </div>
-
+        
         <div class="toc-footer">
-            <h3 class="translations-title">Translation</h3>
-
+            <h3 class="translations-title">Translation</h3> 
+            
 <ul>
-
-        <li><a href="http://localhost:3000/nn/">Nynorsk</a></li>
-
+    
+        <li><a href="http://docuapi.com/nn/">Nynorsk</a></li>
+    
 </ul>
 
 
         </div>
-
-
+         
+        
         <ul class="toc-footer">
-
+            
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-
+            
             <li>Documentation Powered by <a href="https://github.com/bep/docuapi" target="_blank">DocuAPI</a></li>
-
+            
             <li>Hugo Theme by <a href="https://github.com/bep" target="_blank">bep</a></li>
-
+            
         </ul>
-
+        
     </div>
     <div class="page-wrapper">
         <div class="dark-box"></div>
         <div class="content">
-
-
-
+            
+    
+        
 
 <h1 id="introduction">Introduction</h1>
 
-<p>some test text</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">kittn</span>
+<p>The NEM Infrastructure Server (short: NIS) was written in Java. It needs Java 8 to run. It can run with at least 512MB memory for the java virtual machine but we recommend at least 1GB.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-</code></pre></div>
+    
+        <p>NIS can be installed either via installer using the <a href="http://bob.nem.ninja/installer/" target="_blank">NEM Infrastructure Server</a> or as stand-alone package which is hosted on <a href="http://bob.nem.ninja/" target="_blank">http://bob.nem.ninja/</a>. The installer only supports 64 bit versions of Java. The current stand-alone version as of this writing is <a href="http://bob.nem.ninja/nis-ncc-0.6.84.tgz" target="_blank">nis-ncc-0.6.84.tgz</a>. When using the installer both installation and the start-up of the software is automatic. The stand-alone version needs to be unzipped to a directory of your choice. It is then started by running runNis.bat (windows) or nix.runNis.sh (linux) from the command prompt.</p>
 
+    
+        <p>NIS can be installed either via installer using the <a href="http://bob.nem.ninja/installer/" target="_blank">NEM Infrastructure Server</a> or as stand-alone package which is hosted on <a href="http://bob.nem.ninja/" target="_blank">http://bob.nem.ninja/</a>. The installer only supports 64 bit versions of Java. The current stand-alone version as of this writing is <a href="http://bob.nem.ninja/nis-ncc-0.6.84.tgz" target="_blank">nis-ncc-0.6.84.tgz</a>. When using the installer both installation and the start-up of the software is automatic. The stand-alone version needs to be unzipped to a directory of your choice. It is then started by running runNis.bat (windows) or nix.runNis.sh (linux) from the command prompt.</p>
 
-
+    
+        
 
 <h1 id="introduction">Introduction</h1>
 
@@ -103,33 +99,28 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
+package main
 
-<span class="kn">import</span> <span class="s">&quot;github.com/bep/kittn/auth&quot;</span>
+import "github.com/bep/kittn/auth"
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">api</span> <span class="o">:=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">(</span><span class="s">&quot;meowmeowmeow&quot;</span><span class="p">)</span>
+func main() {
+	api := auth.Authorize("meowmeowmeow")
 
-	<span class="c1">// Just to make it compile</span>
-	<span class="nx">_</span> <span class="p">=</span> <span class="nx">api</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;kittn&#39;</span>
+	// Just to make it compile
+	_ = api
+}
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="o">.</span><span class="n">authorize!</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+import kittn
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="c1"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">&quot;api_endpoint_here&quot;</span>
-  -H <span class="s2">&quot;Authorization: meowmeowmeow&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;kittn&#39;</span><span class="p">);</span>
+api = kittn.authorize('meowmeowmeow')
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+const kittn = require('kittn');
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">);</span>
-</code></pre></div>
+let api = kittn.authorize('meowmeowmeow');
 
 <blockquote>
 <p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
@@ -148,55 +139,49 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <h1 id="kittens">Kittens</h1>
 
 <h2 id="get-all-kittens">Get All Kittens</h2>
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
+package main
 
-<span class="kn">import</span> <span class="s">&quot;github.com/bep/kittn/auth&quot;</span>
+import "github.com/bep/kittn/auth"
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">api</span> <span class="o">:=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">(</span><span class="s">&quot;meowmeowmeow&quot;</span><span class="p">)</span>
+func main() {
+	api := auth.Authorize("meowmeowmeow")
 
-	<span class="nx">_</span> <span class="p">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">GetKittens</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;kittn&#39;</span>
+	_ = api.GetKittens()
+}
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="o">.</span><span class="n">authorize!</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get
+import kittn
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl <span class="s2">&quot;http://example.com/api/kittens&quot;</span>
-  -H <span class="s2">&quot;Authorization: meowmeowmeow&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;kittn&#39;</span><span class="p">);</span>
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get()
+curl "http://example.com/api/kittens"
+  -H "Authorization: meowmeowmeow"
+const kittn = require('kittn');
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre></div>
+let api = kittn.authorize('meowmeowmeow');
+let kittens = api.kittens.get();
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Fluffums&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;breed&quot;</span><span class="p">:</span> <span class="s2">&quot;calico&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;fluffiness&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
-    <span class="nt">&quot;cuteness&quot;</span><span class="p">:</span> <span class="mi">7</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;breed&quot;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;fluffiness&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="nt">&quot;cuteness&quot;</span><span class="p">:</span> <span class="mi">10</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-</code></pre></div>
+[
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  {
+    "id": 2,
+    "name": "Max",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
+]
 
 <p>This endpoint retrieves all kittens.</p>
 
@@ -235,46 +220,40 @@ Remember — a happy kitten is an authenticated kitten!
 </aside>
 
 <h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<div class="highlight"><pre><code class="language-go" data-lang="go"><span></span><span class="kn">package</span> <span class="nx">main</span>
+package main
 
-<span class="kn">import</span> <span class="s">&quot;github.com/bep/kittn/auth&quot;</span>
+import "github.com/bep/kittn/auth"
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">api</span> <span class="o">:=</span> <span class="nx">auth</span><span class="p">.</span><span class="nx">Authorize</span><span class="p">(</span><span class="s">&quot;meowmeowmeow&quot;</span><span class="p">)</span>
+func main() {
+	api := auth.Authorize("meowmeowmeow")
 
-	<span class="nx">_</span> <span class="p">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">GetKitten</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">require</span> <span class="s1">&#39;kittn&#39;</span>
+	_ = api.GetKitten(2)
+}
+require 'kittn'
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="o">.</span><span class="n">authorize!</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">kittn</span>
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+import kittn
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl <span class="s2">&quot;http://example.com/api/kittens/2&quot;</span>
-  -H <span class="s2">&quot;Authorization: meowmeowmeow&quot;</span>
-</code></pre></div>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;kittn&#39;</span><span class="p">);</span>
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+const kittn = require('kittn');
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">&#39;meowmeowmeow&#39;</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;breed&quot;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;fluffiness&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-  <span class="nt">&quot;cuteness&quot;</span><span class="p">:</span> <span class="mi">10</span>
-<span class="p">}</span>
-</code></pre></div>
+{
+  "id": 2,
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
 
 <p>This endpoint retrieves a specific kitten.</p>
 
@@ -302,8 +281,8 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody>
 </table>
 
-
-
+    
+        
 
 <h1 id="errors">Errors</h1>
 
@@ -377,27 +356,21 @@ Remember — a happy kitten is an authenticated kitten!
 </tbody>
 </table>
 
-
+    
 
         </div>
         <div class="dark-box">
-
+            
             <div class="lang-selector">
-
-                <a href="#" data-language-name="go">Go</a>
-
-                <a href="#" data-language-name="shell">Shell</a>
-
-                <a href="#" data-language-name="ruby">Ruby</a>
-
+                
+                <a href="#" data-language-name="curl">Curl</a>
+                
                 <a href="#" data-language-name="python">Python</a>
-
-                <a href="#" data-language-name="javascript">Javascript</a>
-
+                
             </div>
-
+            
         </div>
     </div>
-
+    
 </body>
 </html>
